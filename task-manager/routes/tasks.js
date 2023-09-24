@@ -10,6 +10,6 @@ router.get("/:id",getSingleTask);
 
 router.patch("/:id",updateTask);
 
-router.delete("/api/v1/tasks/:id",deleteTask);
+router.delete("/:id",deleteTask);
 
 module.exports = router;

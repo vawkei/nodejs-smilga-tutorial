@@ -8,7 +8,11 @@ const updateTask = require("./routes/tasks");
 const deleteTask = require("./routes/tasks");
 const connectDB = require("./db/connect");
 require("dotenv").config()
+const notFound = require("./middlewares/not-found");
 
+
+//middleware to load the web app's homepage:
+app.use(express.static("../public-task-manager-project"))
 
 //middleware;so we can have access to the req.body:
 app.use(express.json());
@@ -32,11 +36,15 @@ app.use("/api/v1/tasks/:id", deleteTask);
 // });
 //====================ENDS UP=================================================
 
+app.use(notFound);
+
+//const port = 3000
+// const port = process.env.PORT || 3000 this is how is it set when deploying it
 const start = async () => {
   try {
     await connectDB(process.env.MONGODB_URL);
-    app.listen(3000, "localhost", () => {
-      console.log("server listening on port 3000");
+    app.listen(5000, "localhost", () => {
+      console.log("server listening on port 5000");
     });
   } catch (error) {
     console.log(error)
