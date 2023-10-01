@@ -133,7 +133,7 @@ const getAllProducts = async (req, res) => {
 //const getAllProductsTesting =async (req,res)=>{
 //const products = await Product.find({}).sort("name");arranges the products by name alphabetically a-z. so if i type: localhost:3000/api/v1/products/static in the url, i get the products arranged from a-z
 
-//const products = await Product.find({}).sort("-name");arranges the products by name alphabetically a-z. so if i type: localhost:3000/api/v1/products/static in the url, i get the products arranged from z-a;
+//const products = await Product.find({}).sort("-name");arranges the products by name alphabetically z-a. so if i type: localhost:3000/api/v1/products/static in the url, i get the products arranged from z-a;
 
 //const products = await Product.find({}).sort("-name price")
 //res.status(200).json({products})
